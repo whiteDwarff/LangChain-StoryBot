@@ -8,7 +8,7 @@ from playsound import playsound
 from stt import request
 from interface_module import interface
 from stt import request
-from api_key import key
+from API import key
 
 # OpenAI KEY
 os.environ["OPENAI_API_KEY"] = key
