@@ -11,7 +11,7 @@ from stt import request
 
 
 # OpenAI KEY
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "키"
 # PDF 로더 초기화
 loader = PyPDFLoader("./story/kongji.pdf")
 documents = loader.load()
