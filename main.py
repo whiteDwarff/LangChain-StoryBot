@@ -8,10 +8,10 @@ from playsound import playsound
 from stt import request
 from interface_module import interface
 from stt import request
-
+from api_key import key
 
 # OpenAI KEY
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = key
 # PDF 로더 초기화
 loader = PyPDFLoader("./story/kongji.pdf")
 documents = loader.load()
