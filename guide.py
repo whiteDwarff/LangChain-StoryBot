@@ -2,12 +2,12 @@ from gtts import gTTS
 
 
 stroy ="""
-동화에서 그런 내용을 찾을 수 없었어요.
+메뉴를 선택해주세요.
 """
 
 
 tts = gTTS(stroy, lang='ko')
-tts.save("./mp3/answer_exception2.mp3")
+tts.save("./mp3/select_menu.mp3")
 
 """
 

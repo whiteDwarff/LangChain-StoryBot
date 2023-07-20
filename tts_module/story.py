@@ -1,4 +1,5 @@
 import pygame
+import time
 
 def speak():
   pygame.init()
@@ -16,5 +17,6 @@ def speak():
           pygame.mixer.music.unload()
           running = False
           pygame.quit()
+          time.sleep(1)
           return False
 
