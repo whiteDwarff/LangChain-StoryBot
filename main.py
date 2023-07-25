@@ -8,10 +8,9 @@ from playsound import playsound
 from stt import request
 from interface_module import interface
 from stt import request
-from API import key
 
 # OpenAI KEY
-os.environ["OPENAI_API_KEY"] = key
+os.environ["OPENAI_API_KEY"] = ""
 # PDF 로더 초기화
 loader = PyPDFLoader("./story/kongji.pdf")
 documents = loader.load()
@@ -20,14 +19,12 @@ documents = loader.load()
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap = 0)
 texts = text_splitter.split_documents(documents)
 
-# 전역변수 선언, Q&A의 상태를 관리
 GLOBAL_QNA_STATE = False
 
 def run():
-    playsound("./mp3/start.mp3")
-
-
+    # playsound("./mp3/start.mp3")
     menu_state = False 
+    
     while True:
         # 사용자의 두번째 메뉴 선택부터 음성을 출력
         if menu_state:
@@ -39,5 +36,6 @@ def run():
         
         interface.handle_command(command, texts, GLOBAL_QNA_STATE)
         menu_state = True
+
 if __name__ == "__main__":
     run()

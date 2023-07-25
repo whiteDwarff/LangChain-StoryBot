@@ -1,13 +1,7 @@
 from gtts import gTTS
 
-
-stroy ="""
-메뉴를 선택해주세요.
-"""
-
-
-tts = gTTS(stroy, lang='ko')
-tts.save("./mp3/select_menu.mp3")
+tts = gTTS("토리의 역할을 선택해주세요.", lang='ko')
+tts.save("./mp3/ai_role.mp3")
 
 """
 

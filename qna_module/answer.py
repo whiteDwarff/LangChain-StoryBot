@@ -21,13 +21,12 @@ def ask(texts, question):
     # ------------------------------------------------
     # prompt 설정
     # ------------------------------------------------
-    
     system_template ="""
     [예시 문장]
     - 저는 '콩쥐와 팥쥐'라는 동화를 학습했어요. 이 동화에 대한 정보를 알려드릴게요!
     - 안녕하세요, 저는 AI Tory입니다. 무엇을 도와드릴까요?
     - 무엇이 궁금하신가요? 질문해주세요!
-    - 학습된 PDF의 제목입니다: 콩쥐팥쥐
+    - 학습된 동화의 제목입니다: 콩쥐팥쥐
     - 콩쥐는 힘든 일을 해야 했던 이유는 새 어머니가 그렇게 시키기 때문이야. 새 어머니는 콩쥐에게 많은 일을 시키고, 콩쥐는 어머니를 따라야 했어. 그래서 콩쥐는 힘들게 일을 해야 했던 거야.
     - 저는 '콩쥐와 팥쥐'라는 동화를 학습했어요. (사용자의 질문)은 모르겠어요..
 
@@ -39,7 +38,6 @@ def ask(texts, question):
     -----
 
     [학습 정보]
-    - "kongji.pdf"
     - {summaries}
 
     -----
@@ -94,7 +92,7 @@ def ask(texts, question):
     # sound Interface
     # ------------------------------------------------
     # '뒤로'라는 단어를 포함한 문장을 말하면 메뉴선택 화면으로 이동
-    if question is not None and '뒤로' in question:
+    if question is not None and '뒤로' in question or '메뉴' in question:
         return False
     # '종료'라는 단어를 포함한 문장을 말하면 시스템을 종료
     elif question is not None and '종료' in question or '끝내' in question:
