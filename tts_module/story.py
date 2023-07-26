@@ -8,15 +8,13 @@ def speak():
 
   running = True
 
-  while True:
-    running = True
-    while running:
-      for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-          pygame.mixer.music.stop()
-          pygame.mixer.music.unload()
-          running = False
-          pygame.quit()
-          time.sleep(1)
-          return False
+  while running:
+    for event in pygame.event.get():
+      if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+        pygame.mixer.music.stop()
+        pygame.mixer.music.unload()
+        running = False
+        pygame.quit()
+        time.sleep(1)
+        return False
 

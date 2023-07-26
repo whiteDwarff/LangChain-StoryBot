@@ -12,10 +12,12 @@ from langchain.prompts.chat import(
     HumanMessagePromptTemplate
 )
 
-def ask(texts, question):
+def ask(story, question):
 
     embeddings = OpenAIEmbeddings()
-    vector_store = Chroma.from_documents(texts, embeddings)
+    #vector_store에 stroy를 저장
+    vector_store = Chroma.from_documents(story, embeddings)
+    # 2개의 chunk로 나누어진 stroy 중 2개의 값을 넘김
     retriever = vector_store.as_retriever(search_kwargs={"k": 2})
 
     # ------------------------------------------------
@@ -102,8 +104,12 @@ def ask(texts, question):
     elif question is not None:
         # 사용자의 질문에 대한 답변을 가지고 있는 변수
         answer = chain(question)
+        print(f"response : {answer['answer']}")
         answer_stt.result(answer['answer'])
         return True
     # 모든 조건이 충족하지 못해도 새로운 질문을 시작
     else:
         return True
+    
+    #######################################################################
+    # 질문이 없을 경우 예외처리 !!!!

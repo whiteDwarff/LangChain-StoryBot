@@ -1,10 +1,12 @@
 from gtts import gTTS
+from playsound import playsound
+
 
 tts = gTTS("토리의 역할을 선택해주세요.", lang='ko')
 tts.save("./mp3/ai_role.mp3")
 
-"""
 
+"""
 옛날 어느 마을에 콩쥐라는 소녀가 살고 있었습니다.
 콩쥐는 어머니를 일찍 여의고 편찮으신 아버지와 단둘이 살고 있었습니다.
 어머니가 없었지만 콩쥐는 깊은 효심으로 아버지를 열심히 모셨습니다.
