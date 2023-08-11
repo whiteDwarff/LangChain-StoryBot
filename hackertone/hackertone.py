@@ -5,8 +5,7 @@ from langchain.text_splitter import CharacterTextSplitter
 from playsound import playsound
 
 # Module import
-from stt import request
-from interface_module import interface
+from interface import handle_command
 from stt import request
 
 ###################################################################################
@@ -16,16 +15,14 @@ from stt import request
 # OpenAI KEY
 os.environ["OPENAI_API_KEY"] = "sk-"
 # PDF 로더 초기화
-loader = PyPDFLoader("./story/math.pdf")
+loader = PyPDFLoader("./hackertone/math.pdf")
 documents = loader.load()
 # chunk : text를 자르는 단위, 1000글자당 1chunk
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap = 0)
 documents = text_splitter.split_documents(documents)
 
-print(documents)
-
 def run():
-    playsound("./mp3/start.mp3")
+    #playsound("./mp3/start.mp3")
     menu_state = False 
     
     while True:
@@ -33,12 +30,8 @@ def run():
         if menu_state:
             playsound("./mp3/select_menu.mp3")
 
-        command = request() 
         
-        if not command:
-            continue
-        
-        interface.handle_command(command, documents)
+        handle_command(documents)
         menu_state = True
 
 if __name__ == "__main__":

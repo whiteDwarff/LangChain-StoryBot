@@ -2,11 +2,11 @@ import openai
 from playsound import playsound 
 import sys
 from gtts import gTTS
-from tts_module import tts
-openai.api_key = ""
+from tts_module import speak
+openai.api_key = "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"
 
 
-def tts(text):
+def speak(text):
     tts = gTTS(text, lang='ko')
     tts.save("./mp3/role_response.mp3")
     return playsound("./mp3/role_response.mp3")
@@ -75,7 +75,7 @@ def role_playing(user, ai, question):
     elif question is not None:
         # 사용자의 질문에 대한 답변을 가지고 있는 변수
         print(f"response : {result.choices[0].message['content']}")
-        tts(result.choices[0].message["content"])
+        speak(result.choices[0].message["content"])
         return True
     # 모든 조건이 충족하지 못해도 새로운 질문을 시작
     else:

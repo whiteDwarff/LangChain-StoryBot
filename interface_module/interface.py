@@ -6,8 +6,7 @@ from role_module import role
 import sys
 import time
 from gtts import gTTS
-
-
+from tts_module import speak
 def handle_command(question, documents):
 
     if question is not None:
