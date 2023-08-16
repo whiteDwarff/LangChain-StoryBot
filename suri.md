@@ -4,7 +4,8 @@
 
 **팀명 : 뉴런스(Neurons)**
 
-[팀 명단](https://www.notion.so/80e5d9fb15ef43e2a9f5c9e0b0b9ba8e?pvs=21)
+<img width="715" alt="스크린샷 2023-08-16 오후 5 21 47" src="https://github.com/whiteDwarff/LangChain-StoryBot/assets/83889135/aec9afa3-954c-4b1b-979e-402bc311225a">
+
 
 # 2. 작품 개요
 
